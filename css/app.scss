@@ -1,0 +1,365 @@
+$pink: #ffafcc;
+$contrast1: #AFFFE2;
+$skin: #ffc8dd;
+$darkSkin: #fd86b4;
+$vanilla: #f0e4d0;
+$chocolate: #553c13;
+
+body {
+	background: $skin;
+	cursor: crosshair;
+}
+
+section {
+	padding: 0;
+	margin: 0;
+
+	&#hero {
+		position: relative;
+	}
+
+	&:not(#hero) {
+		padding: 30px;
+	}
+
+	&.wave {
+		position: relative;
+	}
+
+	&.after-wave {
+		padding-top: 100px !important;
+	}
+
+	.wave-1 {
+		position: absolute;
+		width: 100vw;
+		left: 0;
+		bottom: -97px;
+		z-index: 99;
+	}
+
+	.wave-2 {
+		position: absolute;
+		width: 100vw;
+		left: 0;
+		bottom: -115px;
+		/* margin-bottom: 81px; */
+		z-index: 98;
+	}
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+	width: 100vw;
+	position: relative;
+}
+
+/* Add some content at the bottom of the video/page */
+.video-content {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 90px 30px;
+
+	/* Style the button used to pause/play the video */
+	#myBtn {
+		width: auto;
+		font-size: 32px;
+		border: none;
+		color: $contrast1;
+		cursor: pointer;
+		font-weight: bold;
+	}
+
+	#myBtn:hover {
+		color: white;
+	}
+}
+
+.parallax {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+
+	.parallax-content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: $contrast1;
+		font-size: 3rem;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+}
+
+.parallax-background {
+	background-color: #e5e5f7;
+	opacity: 0.8;
+	background-image: linear-gradient(135deg, $darkSkin 25%, transparent 25%), linear-gradient(225deg, $darkSkin 25%, transparent 25%), linear-gradient(45deg, $darkSkin 25%, transparent 25%), linear-gradient(315deg, $darkSkin 25%, #e5e5f7 25%);
+	background-position: 10px 0, 10px 0, 0 0, 0 0;
+	background-size: 20px 20px;
+	background-repeat: repeat;
+	width: 100vw;
+	margin-left: -30px;
+	padding: 15px;
+	background-attachment: fixed;
+}
+
+footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 15px;
+	padding: 18px 10px;
+	background: $pink;
+
+	span {
+		text-align: center;
+	}
+}
+
+
+
+// cake container
+
+@mixin foodColoring($color) {
+	background-color: $color;
+	box-shadow:
+		0 2px 0px lighten($color, 5%),
+		0 4px 0px darken($color, 8.2%),
+		0 6px 0px darken($color, 8.4%),
+		0 8px 0px darken($color, 8.6%),
+		0 10px 0px darken($color, 8.8%),
+		0 12px 0px darken($color, 9%),
+		0 14px 0px darken($color, 9.2%),
+		0 16px 0px darken($color, 9.4%),
+		0 18px 0px darken($color, 9.6%),
+		0 20px 0px darken($color, 9.8%),
+		0 22px 0px darken($color, 10%),
+		0 24px 0px darken($color, 10.2%),
+		0 26px 0px darken($color, 10.4%),
+		0 28px 0px darken($color, 10.6%),
+		0 30px 0px darken($color, 10.8%);
+}
+
+.cake-container {
+	position: relative;
+	height: 350px;
+}
+
+.cake {
+	position: absolute;
+	width: 250px;
+	height: 200px;
+	top: 50%;
+	left: 50%;
+	margin-top: -70px;
+	margin-left: -125px;
+}
+
+.plate {
+	width: 270px;
+	height: 110px;
+	position: absolute;
+	bottom: -10px;
+	left: -10px;
+	background-color: #ccc;
+	border-radius: 50%;
+	box-shadow:
+		0 2px 0 darken(#ccc, 10%),
+		0 4px 0 darken(#ccc, 10%),
+		0 5px 40px rgba(black, 0.5);
+}
+
+.cake>* {
+	position: absolute;
+}
+
+.layer {
+	position: absolute;
+	display: block;
+	width: 250px;
+	height: 100px;
+	border-radius: 50%;
+	@include foodColoring($chocolate);
+}
+
+.layer-top {
+	top: 0px;
+}
+
+.layer-middle {
+	top: 33px;
+}
+
+.layer-bottom {
+	top: 66px;
+}
+
+.icing {
+	top: 2px;
+	left: 5px;
+	background-color: $vanilla;
+	width: 240px;
+	height: 90px;
+	border-radius: 50%;
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 4px;
+		right: 5px;
+		bottom: 6px;
+		left: 5px;
+		background-color: lighten($vanilla, 3%);
+		box-shadow:
+			0 0 4px lighten($vanilla, 5%),
+			0 0 4px lighten($vanilla, 5%),
+			0 0 4px lighten($vanilla, 5%);
+		border-radius: 50%;
+		z-index: 1;
+	}
+}
+
+.drip {
+	display: block;
+	width: 50px;
+	height: 60px;
+	border-bottom-left-radius: 25px;
+	border-bottom-right-radius: 25px;
+	background-color: $vanilla;
+}
+
+.drip1 {
+	top: 53px;
+	left: 5px;
+	transform: skewY(15deg);
+	height: 48px;
+	width: 40px;
+}
+
+.drip2 {
+	top: 69px;
+	left: 181px;
+	transform: skewY(-15deg);
+}
+
+.drip3 {
+	top: 54px;
+	left: 90px;
+	width: 80px;
+	border-bottom-left-radius: 40px;
+	border-bottom-right-radius: 40px;
+}
+
+.candle {
+	background-color: #7B020B;
+	width: 16px;
+	height: 50px;
+	border-radius: 8px / 4px;
+	top: -20px;
+	left: 50%;
+	margin-left: -8px;
+	z-index: 10;
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 16px;
+		height: 8px;
+		border-radius: 50%;
+		background-color: lighten(#7B020B, 10%);
+	}
+}
+
+.flame {
+	position: absolute;
+	background-color: orange;
+	width: 15px;
+	height: 35px;
+	border-radius: 10px 10px 10px 10px / 25px 25px 10px 10px;
+	top: -34px;
+	left: 50%;
+	margin-left: -7.5px;
+	z-index: 10;
+	box-shadow:
+		0 0 10px rgba(orange, 0.5),
+		0 0 20px rgba(orange, 0.5),
+		0 0 60px rgba(orange, 0.5),
+		0 0 80px rgba(orange, 0.5);
+	transform-origin: 50% 90%;
+	animation: flicker 1s ease-in-out alternate infinite;
+}
+
+@keyframes flicker {
+	0% {
+		transform: skewX(5deg);
+		box-shadow:
+			0 0 10px rgba(orange, 0.2),
+			0 0 20px rgba(orange, 0.2),
+			0 0 60px rgba(orange, 0.2),
+			0 0 80px rgba(orange, 0.2)
+	}
+
+	25% {
+		transform: skewX(-5deg);
+		box-shadow:
+			0 0 10px rgba(orange, 0.5),
+			0 0 20px rgba(orange, 0.5),
+			0 0 60px rgba(orange, 0.5),
+			0 0 80px rgba(orange, 0.5)
+	}
+
+	50% {
+		transform: skewX(10deg);
+		box-shadow:
+			0 0 10px rgba(orange, 0.3),
+			0 0 20px rgba(orange, 0.3),
+			0 0 60px rgba(orange, 0.3),
+			0 0 80px rgba(orange, 0.3)
+	}
+
+	75% {
+		transform: skewX(-10deg);
+		box-shadow:
+			0 0 10px rgba(orange, 0.4),
+			0 0 20px rgba(orange, 0.4),
+			0 0 60px rgba(orange, 0.4),
+			0 0 80px rgba(orange, 0.4)
+	}
+
+	100% {
+		transform: skewX(5deg);
+		box-shadow:
+			0 0 10px rgba(orange, 0.5),
+			0 0 20px rgba(orange, 0.5),
+			0 0 60px rgba(orange, 0.5),
+			0 0 80px rgba(orange, 0.5)
+	}
+}
+
+canvas {
+	display: block;
+	width: 100%;
+}
+
+.fireworks {
+	position: relative;
+
+	h1 {
+		position: absolute;
+		color: #fff;
+		font-size: 5em;
+		font-weight: 900;
+		-webkit-user-select: none;
+		user-select: none;
+	}
+}

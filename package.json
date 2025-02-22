@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.13.3",
+    "parcel": "^2.13.3",
+    "sass": "^1.85.0"
+  },
+  "dependencies": {
+    "gulp": "^5.0.0",
+    "gulp-less": "^5.0.0",
+    "gulp-sass": "^6.0.0"
+  }
+}
