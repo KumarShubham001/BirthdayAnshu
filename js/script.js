@@ -1,4 +1,4 @@
-$(window).load(function () { setTimeout(() => { $(".se-pre-con").fadeOut("slow") }, 500) });
+$(window).load(function () { setTimeout(() => { $(".se-pre-con").fadeOut("slow") }, 2000) });
 
 
 // Get the video
@@ -28,6 +28,22 @@ function myFunction() {
 	}
 }
 
+$(document).ready(function () {
+	// When the user scrolls down 20px from the top of the document, show the button
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 20) {
+			$('#topBtn').fadeIn();
+		} else {
+			$('#topBtn').fadeOut();
+		}
+	});
+
+	// When the user clicks on the button, scroll to the top of the document
+	$('#topBtn').click(function () {
+		$('html, body').animate({ scrollTop: 0 }, 800);
+		return false;
+	});
+});
 
 document.addEventListener("scroll", parallax);
 

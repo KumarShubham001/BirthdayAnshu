@@ -112,16 +112,18 @@ section {
 }
 
 footer {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 15px;
-	padding: 18px 10px;
 	background: $pink;
 
 	span {
 		text-align: center;
 	}
+}
+
+button#topBtn {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	z-index: 999;
 }
 
 
@@ -150,7 +152,7 @@ footer {
 
 .cake-container {
 	position: relative;
-	height: 350px;
+	height: 300px;
 }
 
 .cake {
@@ -357,8 +359,6 @@ canvas {
 	h1 {
 		position: absolute;
 		color: #fff;
-		font-size: 5em;
-		font-weight: 900;
 		-webkit-user-select: none;
 		user-select: none;
 	}
