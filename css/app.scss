@@ -24,27 +24,48 @@ section {
 
 	&.wave {
 		position: relative;
+
+		.wave-1 {
+			position: absolute;
+			width: 100vw;
+			left: 0;
+			bottom: -30vw;
+			z-index: 99;
+		}
+
+		.wave-2 {
+			position: absolute;
+			width: 100vw;
+			left: 0;
+			bottom: -34vw;
+			/* margin-bottom: 81px; */
+			z-index: 98;
+		}
 	}
 
 	&.after-wave {
-		padding-top: 100px !important;
+		padding-top: 25vw !important;
+		padding-bottom: 25vw !important;
+		clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
 	}
 
-	.wave-1 {
-		position: absolute;
-		width: 100vw;
-		left: 0;
-		bottom: -97px;
-		z-index: 99;
-	}
+	&.fireworks {
+		position: relative;
+		background: black;
+		height: 60vh;
+		overflow: hidden;
 
-	.wave-2 {
-		position: absolute;
-		width: 100vw;
-		left: 0;
-		bottom: -115px;
-		/* margin-bottom: 81px; */
-		z-index: 98;
+		h1 {
+			position: absolute;
+			color: #fff;
+			-webkit-user-select: none;
+			user-select: none;
+		}
+
+		canvas {
+			display: block;
+			width: 100%;
+		}
 	}
 }
 
@@ -126,7 +147,15 @@ button#topBtn {
 	z-index: 999;
 }
 
+.slider-container {
+	.slick-slider {
+		padding: 15px;
 
+		.slick-slide {
+			padding: 15px;
+		}
+	}
+}
 
 // cake container
 
@@ -345,21 +374,5 @@ button#topBtn {
 			0 0 20px rgba(orange, 0.5),
 			0 0 60px rgba(orange, 0.5),
 			0 0 80px rgba(orange, 0.5)
-	}
-}
-
-canvas {
-	display: block;
-	width: 100%;
-}
-
-.fireworks {
-	position: relative;
-
-	h1 {
-		position: absolute;
-		color: #fff;
-		-webkit-user-select: none;
-		user-select: none;
 	}
 }

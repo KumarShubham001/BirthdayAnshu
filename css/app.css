@@ -16,23 +16,41 @@ section:not(#hero) {
 section.wave {
   position: relative;
 }
-section.after-wave {
-  padding-top: 100px !important;
-}
-section .wave-1 {
+section.wave .wave-1 {
   position: absolute;
   width: 100vw;
   left: 0;
-  bottom: -97px;
+  bottom: -30vw;
   z-index: 99;
 }
-section .wave-2 {
+section.wave .wave-2 {
   position: absolute;
   width: 100vw;
   left: 0;
-  bottom: -115px;
+  bottom: -34vw;
   /* margin-bottom: 81px; */
   z-index: 98;
+}
+section.after-wave {
+  padding-top: 25vw !important;
+  padding-bottom: 25vw !important;
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+}
+section.fireworks {
+  position: relative;
+  background: black;
+  height: 60vh;
+  overflow: hidden;
+}
+section.fireworks h1 {
+  position: absolute;
+  color: #fff;
+  -webkit-user-select: none;
+  user-select: none;
+}
+section.fireworks canvas {
+  display: block;
+  width: 100%;
 }
 
 /* Style the video: 100% width and height to cover the entire window */
@@ -107,6 +125,13 @@ button#topBtn {
   bottom: 30px;
   right: 30px;
   z-index: 999;
+}
+
+.slider-container .slick-slider {
+  padding: 15px;
+}
+.slider-container .slick-slider .slick-slide {
+  padding: 15px;
 }
 
 .cake-container {
@@ -270,18 +295,4 @@ button#topBtn {
     transform: skewX(5deg);
     box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.5), 0 0 80px rgba(255, 165, 0, 0.5);
   }
-}
-canvas {
-  display: block;
-  width: 100%;
-}
-
-.fireworks {
-  position: relative;
-}
-.fireworks h1 {
-  position: absolute;
-  color: #fff;
-  -webkit-user-select: none;
-  user-select: none;
 }
