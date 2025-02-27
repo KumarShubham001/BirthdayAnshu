@@ -1,8 +1,19 @@
 body {
-  background: #ffc8dd;
   cursor: crosshair;
 }
 
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 15px;
+  background: #ffc8dd;
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding: 0;
+  }
+}
 section {
   padding: 0;
   margin: 0;
@@ -23,6 +34,12 @@ section.wave .wave-1 {
   bottom: -30vw;
   z-index: 99;
 }
+@media (min-width: 992px) {
+  section.wave .wave-1 {
+    width: 720px;
+    bottom: -215px;
+  }
+}
 section.wave .wave-2 {
   position: absolute;
   width: 100vw;
@@ -31,10 +48,22 @@ section.wave .wave-2 {
   /* margin-bottom: 81px; */
   z-index: 98;
 }
+@media (min-width: 992px) {
+  section.wave .wave-2 {
+    width: 720px;
+    bottom: -230px;
+  }
+}
 section.after-wave {
   padding-top: 25vw !important;
   padding-bottom: 25vw !important;
   clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+}
+@media (min-width: 992px) {
+  section.after-wave {
+    padding-top: 200px !important;
+    padding-bottom: 100px !important;
+  }
 }
 section.fireworks {
   position: relative;
@@ -111,6 +140,11 @@ section.fireworks canvas {
   margin-left: -30px;
   padding: 15px;
   background-attachment: fixed;
+}
+@media (min-width: 992px) {
+  .parallax-background {
+    width: 720px;
+  }
 }
 
 footer {
