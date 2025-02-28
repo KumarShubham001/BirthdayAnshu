@@ -10,15 +10,16 @@ body {
 }
 
 .container {
-	max-width: 720px;
+	width: 100vw;
 	margin: 0 auto;
-	padding: 0 15px;
+	padding: 0;
 	background: $skin;
 }
 
 @media (min-width: 992px) {
 	.container {
 		padding: 0;
+		max-width: 720px;
 	}
 }
 
